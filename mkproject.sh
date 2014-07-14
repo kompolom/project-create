@@ -24,6 +24,8 @@ echo "Создаю директорию $ROOTDIR/$PROJECTNAME"
 mkdir -pv $ROOTDIR/$PROJECTNAME
 cd $ROOTDIR/$PROJECTNAME
 mkdir -pv src
+mkdir -pv $ROOTDIR/$PROJECTNAME/$PROJECTNAME
+cd $ROOTDIR/$PROJECTNAME/$PROJECTNAME
 git init
 
 #Create VirtualHost
