@@ -19,14 +19,19 @@ VHOST_FILE=$WEBSERVER_CONFIG_DIR/sites-available/$FULL_DOMAIN_NAME.conf
 
 DNS_FILE='/etc/hosts'
 
-
-echo "Создаю директорию $ROOTDIR/$PROJECTNAME"
 mkdir -pv $ROOTDIR/$PROJECTNAME
 cd $ROOTDIR/$PROJECTNAME
 mkdir -pv src
 mkdir -pv $ROOTDIR/$PROJECTNAME/$PROJECTNAME
 cd $ROOTDIR/$PROJECTNAME/$PROJECTNAME
 git init
+
+#Create bower project file
+touch bower.json
+echo '{
+ "name": "'$PROJECTNAME'",
+ "version": "1.0.0",
+}' > bower.json
 
 #Create VirtualHost
 function echo_vhost_content(){ 
